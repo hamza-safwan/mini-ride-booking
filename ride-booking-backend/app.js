@@ -30,7 +30,7 @@ app.use('/users', userRoutes);
 
 
 
-sequelize.sync({ alter: true }).then(() => {
+sequelize.sync({ force: true }).then(() => {
     console.log('Database synced!');
     app.listen(3000, () => console.log('Server running on http://localhost:3000'));
 });

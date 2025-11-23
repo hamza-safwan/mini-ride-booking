@@ -1,0 +1,26 @@
+{
+  "name": "ride-booking-app",
+  "version": "1.0.0",
+  "description": "Modern ride booking full-stack application",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm run dev --workspace=server",
+    "dev:client": "npm run dev --workspace=client",
+    "build": "npm run build --workspace=client",
+    "start": "npm run start:server",
+    "start:server": "npm run start --workspace=server",
+    "prod": "npm run build && npm run start:server",
+    "install:all": "npm install && npm install --workspaces"
+  },
+  "keywords": ["ride-booking", "full-stack", "real-time"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
